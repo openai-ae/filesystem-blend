@@ -15,7 +15,7 @@ backup=('etc/crypttab' 'etc/fstab' 'etc/group' 'etc/gshadow' 'etc/host.conf'
 source=('crypttab' 'env-generator' 'fstab' 'group' 'gshadow' 'host.conf' 'hosts'
         'issue' 'ld.so.conf' 'locale.sh' 'nsswitch.conf' 'os-release' 'profile'
         'passwd' 'resolv.conf' 'securetty' 'shadow' 'shells' 'sysctl' 'sysusers'
-        'tmpfiles' 'subuid' 'subgid' 'blendos-logo.svg' 'blendos-logo.png'
+        'tmpfiles' 'subuid' 'subgid' 'blendos-logo.png'
         'blendos-logo-text.svg' 'blendos-logo-text-dark.svg')
 sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             'ed0cb4f1db4021f8c3b5ce78fdf91d2c0624708f58f36c9cf867f4d93c3bc6da'
@@ -40,10 +40,9 @@ sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             '5d8e61479f0093852365090e84d8d95b1e7fccfab068274ee25863bde6ff3e07'
             'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
             'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
-            '99b61a0115418752aaf6a9c4f96e0ae39daaf840ba7da3c229cd931db1de888d'
-            'dc492e3bd831afabbc0485fc9f5191a45339e3efb365d077cc7c3516600c8e92'
-            'c537a52a045c9299b4f09382e2acc4e0b01e4d928a88666f4a6d891131f451db'
-            'c537a52a045c9299b4f09382e2acc4e0b01e4d928a88666f4a6d891131f451db')
+            '5e5e1ddd1ad45fc7cb40bd5571c52189d1a843211f4e82bfcd449fcb62c217ca'
+            'e49792a69b1b6bc4b2e49f73ae9f3de9f4b944f41675d4474da8365db1c1f5aa'
+            'e49792a69b1b6bc4b2e49f73ae9f3de9f4b944f41675d4474da8365db1c1f5aa')
 
 package() {
   cd "$pkgdir"
@@ -127,5 +126,5 @@ package() {
   install -D -m755 "$srcdir"/env-generator usr/lib/systemd/system-environment-generators/10-arch
 
   # add logo
-  install -D -m644 "$srcdir"/blendos-logo{.png,.svg,-text.svg,-text-dark.svg} usr/share/pixmaps
+  install -D -m644 "$srcdir"/blendos-logo{.png,-text.svg,-text-dark.svg} usr/share/pixmaps
 }
