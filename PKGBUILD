@@ -1,7 +1,7 @@
 pkgname=filesystem-blend
 pkgver=2023.01.05
 pkgrel=1
-pkgdesc='Base blendOS files'
+pkgdesc='Base cyrOS files'
 arch=('x86_64')
 license=('GPL')
 url='https://github.com/blend-os/filesystem-blend'
@@ -15,8 +15,7 @@ backup=('etc/crypttab' 'etc/fstab' 'etc/group' 'etc/gshadow' 'etc/host.conf'
 source=('crypttab' 'env-generator' 'fstab' 'group' 'gshadow' 'host.conf' 'hosts'
         'issue' 'ld.so.conf' 'locale.sh' 'nsswitch.conf' 'os-release' 'profile'
         'passwd' 'resolv.conf' 'securetty' 'shadow' 'shells' 'sysctl' 'sysusers'
-        'tmpfiles' 'subuid' 'subgid' 'blendos-logo.png'
-        'blendos-logo-text.svg' 'blendos-logo-text-dark.svg')
+        'tmpfiles' 'subuid' 'subgid' 'blendos-logo.png')
 sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             'ed0cb4f1db4021f8c3b5ce78fdf91d2c0624708f58f36c9cf867f4d93c3bc6da'
             'e54626e74ed8fee4173b62a545ab1c3a3a069e4217a0ee8fc398d9933e9c1696'
@@ -40,9 +39,7 @@ sha256sums=('e03bede3d258d680548696623d5979c6edf03272e801a813c81ba5a5c64f4f82'
             '5d8e61479f0093852365090e84d8d95b1e7fccfab068274ee25863bde6ff3e07'
             'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
             'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
-            '5e5e1ddd1ad45fc7cb40bd5571c52189d1a843211f4e82bfcd449fcb62c217ca'
-            'e49792a69b1b6bc4b2e49f73ae9f3de9f4b944f41675d4474da8365db1c1f5aa'
-            'e49792a69b1b6bc4b2e49f73ae9f3de9f4b944f41675d4474da8365db1c1f5aa')
+            'SKIP')
 
 package() {
   cd "$pkgdir"
@@ -126,5 +123,5 @@ package() {
   install -D -m755 "$srcdir"/env-generator usr/lib/systemd/system-environment-generators/10-arch
 
   # add logo
-  install -D -m644 "$srcdir"/blendos-logo{.png,-text.svg,-text-dark.svg} usr/share/pixmaps
+  install -D -m644 "$srcdir"/blendos-logo.png usr/share/pixmaps
 }
